@@ -1,0 +1,41 @@
+{
+  "name": "@nodearch/logger",
+  "version": "0.0.1",
+  "description": "nodearch logger",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "mocha -r ts-node/register tests/**/*.spec.ts",
+    "testWithCoverage": "nyc -r lcov -e .ts -x \"*.test.ts\" mocha -r ts-node/register tests/**/*.spec.ts && nyc report",
+    "release": "npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodearch/logger.git"
+  },
+  "keywords": [
+    "nodearch",
+    "nodearch-logger"
+  ],
+  "author": "https://github.com/AhmedAli7O1",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/nodearch/logger/issues",
+    "email": "bluemax7o1@gmail.com"
+  },
+  "engines": {
+    "node": ">=8.0.0 <*"
+  },
+  "dependencies": {
+    "@nodearch/core": "^0.2.4"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.0.8",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.2"
+  }
+}
