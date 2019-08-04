@@ -1,12 +1,13 @@
 {
   "name": "@nodearch/logger",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "nodearch logger",
   "main": "./dist/index.js",
   "scripts": {
     "test": "mocha -r ts-node/register tests/**/*.spec.ts",
-    "testWithCoverage": "nyc -r lcov -e .ts -x \"*.test.ts\" mocha -r ts-node/register tests/**/*.spec.ts && nyc report",
-    "release": "npm publish --access public"
+    "test-cov": "nyc -r lcov -e .ts -x \"*.test.ts\" mocha -r ts-node/register tests/**/*.spec.ts && nyc report",
+    "build": "rm -rf ./dist && tsc",
+    "release": "npm run build && npm publish --access public"
   },
   "repository": {
     "type": "git",
@@ -25,10 +26,9 @@
   "engines": {
     "node": ">=8.0.0 <*"
   },
-  "dependencies": {
-    "@nodearch/core": "^0.2.4"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@nodearch/core": "^0.4.5",
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.0.8",
